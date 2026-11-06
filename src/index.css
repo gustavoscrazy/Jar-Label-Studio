@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+.font-serif-botanical {
+  font-family: 'IBM Plex Serif', Georgia, Cambria, serif;
+}
+
+.font-mono-botanical {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Print Specific Rules for Herbarium Labels (12cm x 10cm on A4 Landscape) */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 5mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-modal-root,
+  .print-modal-dialog,
+  .print-modal-body,
+  .print-preview-scroll {
+    position: static !important;
+    overflow: visible !important;
+    max-height: none !important;
+    max-width: none !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: block !important;
+  }
+
+  .print-page {
+    width: 285mm !important;
+    margin: 0 auto !important;
+    padding: 2mm 0 !important;
+    background: #ffffff !important;
+    page-break-after: always;
+    break-after: page;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .print-page-grid {
+    display: grid !important;
+    grid-template-columns: 120mm 120mm !important;
+    gap: 5mm 7mm !important;
+    justify-content: center !important;
+    align-content: start !important;
+  }
+
+  .print-label-item {
+    width: 120mm !important;
+    height: 100mm !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .print-label-item > div {
+    width: 120mm !important;
+    height: 100mm !important;
+    max-width: 120mm !important;
+    box-shadow: none !important;
+  }
+}

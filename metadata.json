@@ -1,0 +1,6 @@
+{
+  "name": "HerbariumLabel Studio - Gerador de Etiquetas Botânicas com IA",
+  "description": "Sistema científico de geração de etiquetas padronizadas para excicatas botânicas de herbário com integração a bancos de dados, auditoria taxonômica e correção por IA, e exportação para PDF.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
